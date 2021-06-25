@@ -1,23 +1,29 @@
-<div class="cover mb-4 d-flex align-items-center justify-content-center">
-  <div class="text-center text-black">
-    <h1><strong>Save any kind of movies</strong></h1>
-    <h3 class="typed-js"></h3>
+<p>Lists/index.html.erb</p>
+
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.blogs.es/c9929c/netflix-cine/1366_2000.jpg);">
+    <div class="container">
+  <div class="d-flex align-items-right justify-content-between mb-2">
+<p class = "text-left"><%= link_to 'Create a movie list', new_list_path %></p>
+    
   </div>
+<p class = "text-left">My Lists:</p>
+    
 </div>
-<div class="container py-5">
-  <div class="d-flex align-items-center justify-content-between mb-3">
-    <h3 class="mb-0">My Lists</h3>
-    <%= link_to 'Create a movie list', new_list_path, class: 'btn btn-flat' %>
-  </div>
-  <div class="row">
+ 
+  
+  <div class = "text-center">
     <% @lists.each do |list| %>
+    <div class = "row">
       <div class="co-12 colsm-6 col-md-4 mb-3">
         <%= link_to list_path(list), class:'text-decoration-none' do %>
-          <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : asset_path('list_background.jpg') %>)">
-            <%= list.name %>
+                     <%= list.name %>
           </div>
         <% end %>
       </div>
     <% end %>
-  </div>
+
+    </div>
+    </div>
+
 </div>
+  </div>
